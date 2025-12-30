@@ -87,3 +87,51 @@ body {
   border-radius: 50%;
   vertical-align: top;
 }
+.postContainer {
+  background-color: #1e1e1e;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  color: aliceblue;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  border: 1px solid #2c2c2c;
+}
+.likeBtn {
+  padding: 7px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #2ca0c4;
+  transition: 0.3s ease all;
+}
+
+.likeBtn:hover {
+  background-color: #15627a;
+  transform: translateY(-2px);
+}
+.likeBtn:active {
+  transform: translateY(0);
+}
+.postGrid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+@media (max-width: 780px) {
+  .postContainer {
+    max-width: 300px;
+  }
+}
+@media (max-width: 500px) {
+  .navbar .userName {
+    display: none;
+  }
+}
+@media (max-width: 380px) {
+  .navbar .links {
+    margin-right: 0;
+  }
+}

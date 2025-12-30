@@ -5,6 +5,7 @@ import { addDoc, collection } from "firebase/firestore"
 import { auth, db } from "../../config/firebase"
 import { title } from "process"
 import { useAuthState } from "react-firebase-hooks/auth"
+import { useNavigate } from "react-router-dom"
 
 interface CreateFormData {
     title: string,
@@ -13,6 +14,7 @@ interface CreateFormData {
 
 export const CreateForm = () => {
     const [user] = useAuthState(auth);
+    const navigate = useNavigate()
     const schema = yup.object().shape({
         title: yup.string().required("You Must Add a Title"),
         description: yup.string().required("You must add a Description")
@@ -24,12 +26,12 @@ export const CreateForm = () => {
 
     const postRef = collection(db, "posts");
     const onCreatePost = async (data: CreateFormData) => {
-        console.log(data)
         await addDoc(postRef, {
             ...data,
             username: user?.displayName,
             userId: user?.uid
         })
+        navigate("/")
     }
     return (
         <form onSubmit={handleSubmit(onCreatePost)}>
