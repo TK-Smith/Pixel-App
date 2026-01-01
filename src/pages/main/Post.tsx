@@ -20,6 +20,7 @@ export const Post = (props: Props) => {
 
     const likesRef = collection(db, "likes");
     const likesDoc = query(likesRef, where("postId", "==", post.id))
+
     const getLikes = async () => {
         const data = await getDocs(likesDoc)
         setLikes(data.docs.map((doc) => ({ userId: doc.data().userId, likeId: doc.id })))
@@ -30,19 +31,37 @@ export const Post = (props: Props) => {
                 userId: user?.uid, postId: post.id
             })
             if (user) {
-                setLikes((prev) => prev ? [...prev, { userId: user?.uid, likeId: newDoc.id }] : [{ userId: user?.uid, likeId: newDoc.id }])
+                setLikes((prev) => prev ? [...prev, { userId: user.uid, likeId: newDoc.id }] : [{ userId: user.uid, likeId: newDoc.id }])
             }
         } catch (err) {
             console.log(err)
         }
     }
 
+    /* const removeLike = async () => {
+         try {
+             const likeToDeleteQuery = query(likesRef, where("postId", "==", post?.id), where("userId", "==", user?.uid))
+             const likeToDeleteData = await getDocs(likeToDeleteQuery);
+ 
+             const likeId = likeToDeleteData.docs[0].id
+ 
+             const likeToDelete = doc(db, "likes", likeToDeleteData.docs[0].id)
+             console.log(likeToDelete)
+             await deleteDoc(likeToDelete);
+             if (user) {
+                 setLikes((prev) => prev && prev.filter((like) => like.likeId !== likeId))
+             }
+         } catch (err) {
+             console.log(err)
+         }
+     }
+         */
     const removeLike = async () => {
         try {
             const likeToDeleteQuery = query(likesRef, where("postId", "==", post.id), where("userId", "==", user?.uid))
-            const likeToDeleteData = await getDocs(likeToDeleteQuery);
-            const likeId = likeToDeleteData.docs[0].id
-            const likeToDelete = doc(db, "likes", likeToDeleteData.docs[0].id)
+            const likeToDeleteData = await getDocs(likeToDeleteQuery)
+            const likeId = likeToDeleteData.docs[0].id;
+            const likeToDelete = doc(db, "likes", likeId)
             await deleteDoc(likeToDelete);
             if (user) {
                 setLikes((prev) => prev && prev.filter((like) => like.likeId !== likeId))
@@ -69,7 +88,7 @@ export const Post = (props: Props) => {
             <div>
                 <p>@{post.username}</p>
             </div>
-            <button className="likeBtn" onClick={hasUserLiked ? addLike : removeLike}> {hasUserLiked ? <>&#128078;</> : <>&#128077;</>} </button>
+            <button className="likeBtn" onClick={hasUserLiked ? removeLike : addLike}> {hasUserLiked ? <>&#128078;</> : <>&#128077;</>} </button>
             {likes && <p>Likes: {likes?.length}</p>}
         </div>
     )

@@ -1,0 +1,58 @@
+[debug] [2025-12-31T14:35:17.071Z] ----------------------------------------------------------------------
+[debug] [2025-12-31T14:35:17.076Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-12-31T14:35:17.076Z] CLI Version:   15.1.0
+[debug] [2025-12-31T14:35:17.076Z] Platform:      win32
+[debug] [2025-12-31T14:35:17.077Z] Node Version:  v22.15.0
+[debug] [2025-12-31T14:35:17.077Z] Time:          Wed Dec 31 2025 15:35:17 GMT+0100 (West Africa Standard Time)
+[debug] [2025-12-31T14:35:17.077Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\USER\Documents\Torkuma\Allcode\Pixel-App
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2025-12-31T14:35:28.395Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-12-31T14:35:28.397Z] > authorizing via signed-in user (deborah1488ali@gmail.com)
+[debug] [2025-12-31T14:39:54.992Z] Checked if tokens are valid: true, expires at: 1767194105499
+[debug] [2025-12-31T14:39:54.993Z] Checked if tokens are valid: true, expires at: 1767194105499
+[debug] [2025-12-31T14:39:54.997Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1/projects:checkProjectId [none]
+[debug] [2025-12-31T14:39:54.997Z] >>> [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"proposedId":"getgetgetgetgetget"}
+[debug] [2025-12-31T14:39:59.035Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1/projects:checkProjectId 200
+[debug] [2025-12-31T14:39:59.036Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"projectIdStatus":"PROJECT_ID_UNAVAILABLE","suggestedProjectId":"getgetgetgetgetget-7ef13"}
+[debug] [2025-12-31T15:01:23.570Z] Checked if tokens are valid: false, expires at: 1767194105499
+[debug] [2025-12-31T15:01:23.571Z] Checked if tokens are valid: false, expires at: 1767194105499
+[debug] [2025-12-31T15:01:23.576Z] > refreshing access token with scopes: []
+[debug] [2025-12-31T15:01:23.588Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-12-31T15:01:23.588Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-31T15:01:24.437Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-12-31T15:01:24.438Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-31T15:01:24.472Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1/projects:checkProjectId [none]
+[debug] [2025-12-31T15:01:24.472Z] >>> [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"proposedId":"getgetgetgetgetget-7ef13."}
+[debug] [2025-12-31T15:01:25.363Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1/projects:checkProjectId 400
+[debug] [2025-12-31T15:01:25.364Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"error":{"code":400,"message":"Request contains an invalid argument.","status":"INVALID_ARGUMENT"}}
+[debug] [2025-12-31T15:01:25.373Z] Couldn't check if project ID getgetgetgetgetget-7ef13. is available. Original error: FirebaseError: Failed to check if project ID is available. See firebase-debug.log for more info.
+[debug] [2025-12-31T15:10:55.825Z] Checked if tokens are valid: true, expires at: 1767196883439
+[debug] [2025-12-31T15:10:55.825Z] Checked if tokens are valid: true, expires at: 1767196883439
+[debug] [2025-12-31T15:10:55.825Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2025-12-31T15:10:55.825Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"getgetgetgetgetget-7ef13.","name":"Pixel-App"}
+[debug] [2025-12-31T15:10:56.940Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 400
+[debug] [2025-12-31T15:10:56.941Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"error":{"code":400,"message":"field [project_id] has issue [project_id contains invalid characters]","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"project_id","description":"project_id contains invalid characters"}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"url":"https://cloud.google.com/resource-manager/reference/rest/v1/projects"}]}]}}
+[debug] [2025-12-31T15:10:57.550Z] FirebaseError: Request to https://cloudresourcemanager.googleapis.com/v1/projects had HTTP Error: 400, field [project_id] has issue [project_id contains invalid characters]
+    at responseToError (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:53:12)
+    at RetryOperation._fn (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:322:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
