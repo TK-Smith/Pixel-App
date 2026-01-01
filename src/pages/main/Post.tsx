@@ -38,24 +38,6 @@ export const Post = (props: Props) => {
         }
     }
 
-    /* const removeLike = async () => {
-         try {
-             const likeToDeleteQuery = query(likesRef, where("postId", "==", post?.id), where("userId", "==", user?.uid))
-             const likeToDeleteData = await getDocs(likeToDeleteQuery);
- 
-             const likeId = likeToDeleteData.docs[0].id
- 
-             const likeToDelete = doc(db, "likes", likeToDeleteData.docs[0].id)
-             console.log(likeToDelete)
-             await deleteDoc(likeToDelete);
-             if (user) {
-                 setLikes((prev) => prev && prev.filter((like) => like.likeId !== likeId))
-             }
-         } catch (err) {
-             console.log(err)
-         }
-     }
-         */
     const removeLike = async () => {
         try {
             const likeToDeleteQuery = query(likesRef, where("postId", "==", post.id), where("userId", "==", user?.uid))
